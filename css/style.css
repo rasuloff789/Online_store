@@ -6,11 +6,36 @@ html{
 *::after{
   box-sizing: inherit;
 }
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
 body{
+  margin-top: 43px;
   font-family: 'Montserrat' , Arial , sans-serif;
 }
 .container{
-  width: 1150px;
+  width: 1120px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -33,6 +58,7 @@ body{
   align-items: center;
   justify-content: start;
 padding: 0;
+z-index: 6;
 list-style-type: none;
 margin-top: 0;
 margin-bottom: 0;
@@ -41,6 +67,9 @@ flex-grow: 1;
 .nav__menu__lists .nav__menu__list:nth-child(1),
 .nav__menu__lists .nav__menu__list:nth-child(2){
   margin: 0 12.5px;
+}
+.nav__menu__lists .nav__menu__list:nth-child(1){
+  margin-left: 0;
 }
 .nav__menu__lists .nav__menu__list:nth-child(3){
   margin-left:12.5px;
@@ -84,14 +113,18 @@ font-size: 14px;
 line-height: 17px;
 letter-spacing: 0.03em;
 color: #212121;
+position: relative;
+z-index: 100;
+background-color: #F9F6F1;
 }
 
 .logo__the__loop{
   display: block;
 }
 .nav__menu__list{
-
+/* height: 100%; */
   position: relative ;
+  z-index: 5;
 
 }
 .with__dropdown__menus{
@@ -100,10 +133,13 @@ color: #212121;
 .nav__menu__list:hover .dropdown__menus{
 display: block;
 animation-name: go-up;
-  animation-duration: 0.6s;
+  animation-duration: 0.4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
+}
+.nav__menu__list:hover /* .nav__menu__link */{
+  background-color: #F9F6F1 !important;
 }
 .nav__menu__list:hover .with__dropdown__menus::after{
   transform: rotate(180deg);
@@ -117,11 +153,12 @@ margin-left: 5px;
 border-style: solid;
 border-width:5px 5px 0px 5px;
 border-color: #212121 transparent transparent transparent;
-transition:transform 0.5s ease;
+transition:transform 0.4s ease;
 
 }
 .dropdown__menus{
   position: absolute;
+  z-index: -1;
   display: none;
   list-style-type: none;
   margin: 0;
@@ -130,12 +167,12 @@ transition:transform 0.5s ease;
   left: 50%;
   background-color:  #F9F6F1;
   border-radius: 8px;
-  box-shadow: 0px 7px 107px -23px rgba(0,0,0,0.75);
+  box-shadow: 0px 7px 8px 2px rgba(0,0,0,0.3);
 }
 @keyframes go-up {
   from {
     opacity: 0;
-    transform: translateY(-100%) translateX(-50%) ;
+    transform: translateY(-50%) translateX(-50%) ;
   }
 
   to {
@@ -150,10 +187,269 @@ transition:transform 0.5s ease;
   color: #212121 ;
   padding: 8px 16px;
 white-space: nowrap;
-transition:color 0.5s ease,
+transition:color 0.3s ease,
 background-color ease 0.5s;
 }
 .dropdown__menu__link:hover{
 color:#F9F6F1;
 background-color: #212121;
+}
+
+
+.slider__top__part{
+
+  padding: 70px 0 70px 0 ;
+
+}
+
+.slider__video{
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  width: 100%;
+  padding: 70px 0 180px 0;
+  background-image: url('../images/running_shoes_PNG5823.png');
+  background-repeat: no-repeat;
+background-attachment: cover;
+background-position: center right;
+}
+.slider__top__left__text{
+  font-weight: normal;
+font-size: 30px;
+line-height: 37px;
+letter-spacing: 0.02em;
+margin: 0 0  35px  0;
+color: #000000;
+
+}
+.slider__top__left__heading{
+  font-style: normal;
+  margin: 0 0 55px 0;
+font-weight: bold;
+font-size: 55px;
+line-height: 67px;
+letter-spacing: 0.04em;
+text-transform: uppercase;
+color: #000000;
+}
+.slider__top__left__link{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  /* identical to box height */
+  background-color: #D7B399;
+  letter-spacing: 0.03em;
+text-transform: uppercase;
+text-decoration: none;
+padding: 17px 30px;
+  color: #FFFFFF;
+
+display: inline-block;
+}
+
+
+
+.slider__top__right__before{
+  margin: 0 0 14px 0;
+  font-weight: bold;
+font-size: 24px;
+line-height: 29px;
+text-align: right;
+letter-spacing: 0.05em;
+text-decoration-line: line-through;
+text-transform: uppercase;
+
+color: #000000;
+}
+
+
+
+
+.slider__top__right__after{
+  margin: 0;
+  font-style: normal;
+font-weight: bold;
+font-size: 42px;
+line-height: 51px;
+text-align: right;
+letter-spacing: 0.02em;
+text-transform: uppercase;
+
+color: #D84033;
+
+}
+.slider__buttons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider__buttons button:last-child{
+margin: 0;
+}
+.slider__button{
+  width: 40px;
+height: 7px;
+margin-right: 15px;
+background: #CECECE;;
+border: none;
+outline: none;
+}
+.slider__button:nth-child(2){
+  background-color: #D7B399;
+}
+
+
+.free__delivery{
+  background-color:  #212121;
+}
+
+
+.free__delivery__container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 65px 0;
+}
+
+
+.free__delivery__heading{
+  font-style: normal;
+font-size: 30px;
+line-height: 37px;
+margin: 0 0 23px 0;
+text-transform: uppercase;
+text-align: center;
+letter-spacing: 0.02em;
+font-weight: 300;
+color: #FFFFFF;
+}
+.free__delivery__heading span{
+  font-weight: bold;
+}
+.free__delivery__text{
+  font-style: normal;
+font-weight: 300;
+font-size: 21px;
+line-height: 26px;
+/* identical to box height */
+margin: 0;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.bgc__collections{
+  background: #F9F6F1;
+}
+
+
+.links__to__collections{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.road__to__xx__collection{
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 50%;
+  padding: 60px 15px 60px 35px;
+  background-image: url('../images/man__background.png');
+  background-attachment:cover;
+  background-repeat:no-repeat;
+  background-position: bottom right;
+}
+.road__to__xx__collection:nth-child(2){
+  background-image: url('../images/woman__background.png');
+}
+.road__to__mans__collection__heading{
+  margin: 0 0 25px 0;
+  font-style: normal;
+font-weight: 300;
+font-size: 24px;
+line-height: 29px;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+color: #000000;
+}
+.road__to__mans__collection__heading span{
+font-weight: 500;
+}
+.road__to__mans__collection__text{
+  font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 20px;
+margin: 0 0 40px 0;
+color: #000000;
+}
+
+.arrow__forward{
+  display: block;
+}
+
+.road__to__mans__collecyion__link{
+  background-color: #D7B399;
+  padding: 10px 40px;
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+}
+
+
+
+
+.mans__t-shirt__collection{
+  margin-top: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+margin-bottom: 0;
+}
+
+
+.mans__t__shirt{
+  display: flex;
+  height: 250px;
+  background-color: #F4F4F4;
+  flex-direction: column;
+ justify-content: flex-end;
+flex-grow: 1;
+  width: 277px;
+  padding: 25px 30px;
+  background-image: url('../images/wear-removebg-preview.png');
+  background-repeat: no-repeat;
+  background-position: center right;
+
+}
+
+.mans__t-shirt__collection:nth-child(even) .mans__t__shirt:nth-child(odd){
+  background-color: #F9F6F1;
+
+}
+
+.mans__t-shirt__collection:nth-child(odd) .mans__t__shirt:nth-child(even){
+  background-color: #F9F6F1;
+}
+
+
+.mans__collect__name{
+  margin-bottom: auto;
+  font-style: normal;
+font-weight: 300;
+font-size: 21px;
+line-height: 26px;
+/* identical to box height */
+text-transform: uppercase;
+letter-spacing: 0.03em;
+margin: 0;
+display: inline-block;
+color: #000000;
 }
